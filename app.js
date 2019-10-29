@@ -43,11 +43,14 @@ app.use(function (req, res, next) {
 
 app.get('/', cors(), function (req, res) {
   const formData = new FormData();
-  formData.append('grant_type', 'authorization_code');
+  console.log('consumerId' + consumerId);
+  console.log('consumerSecret' + consumerSecret);
+  //formData.append('grant_type', 'authorization_code');
+  formData.append('grant_type', 'password');
   formData.append('client_id', consumerId);
   formData.append('client_secret', consumerSecret);
-  formData.append('redirect_uri', 'https://myltnout.herokuapp.com');
-  formData.append('code', 'aPrx4sgoM2Nd1zWeFVlOWveD0AQ55ZPnk8OmFl9F5s6LYfwV9R.V95wASr6cH0hushxDVY0t2Q%3D%3D');
+  formData.append('username', 'lihuangyuan@gmail.com');
+  formData.append('password', 'nemo7lhy');
 
   (async () => {
     try {
@@ -57,6 +60,7 @@ app.get('/', cors(), function (req, res) {
       });
 
       const user = await res1.json();
+      console.log('user' + user);
 
       app.locals.oauthtoken = user.access_token;
       app.locals.lightningEndPointURI = lightningEndPointURI;
