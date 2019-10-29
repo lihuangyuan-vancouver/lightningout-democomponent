@@ -60,7 +60,7 @@ app.get('/', cors(), function (req, res) {
       });
 
       const user = await res1.json();
-      console.log('user' + user);
+      console.log('user' + JSON.stringify(user));
 
       app.locals.oauthtoken = user.access_token;
       app.locals.lightningEndPointURI = lightningEndPointURI;
