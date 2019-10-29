@@ -11,8 +11,8 @@ var authtokenUrl = process.env.CLASSIC_DOMAIN_URI + '/services/oauth2/token';
 var lightningEndPointURI = process.env.LIGHTNING_DOMAIN_URI; 
 var username = process.env.USERNAME; 
 var password = process.env.PASSWORD; 
-var appName =  process.env.LightningAppName; 
-var cmpName =  process.env.LightningCmpName; 
+var appName =  'ContacViewerLightningApp'; 
+var cmpName =  'ContacViewerCmp'; 
 
 var app = express();
 
